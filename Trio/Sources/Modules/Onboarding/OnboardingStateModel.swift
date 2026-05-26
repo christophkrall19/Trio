@@ -3,6 +3,7 @@ import DanaKit
 import FirebaseCrashlytics
 import Foundation
 import LoopKit
+import MedtrumKit
 import MinimedKit
 import Observation
 import OmniBLE
@@ -25,26 +26,36 @@ extension Onboarding {
 
         // MARK: - App Diagnostics
 
-        private var persistedDiagnosticsSharing: Bool? {
-            get { PropertyPersistentFlags.shared.diagnosticsSharingEnabled }
-            set { PropertyPersistentFlags.shared.diagnosticsSharingEnabled = newValue }
-        }
-
-        var diagnosticsSharingOption: DiagnosticsSharingOption = .enabled
+        var diagnosticsSharingOption: DiagnosticsSharingOption = .full
         var hasAcceptedPrivacyPolicy: Bool = false
 
         func syncDiagnosticsOptionFromStorage() {
-            diagnosticsSharingOption = (persistedDiagnosticsSharing ?? true) ? .enabled : .disabled
+            // Onboarding *is* the consent decision point, so a fresh install
+            // sees `.full` (truly opt-out). If the user has already picked
+            // something — e.g. backed out of this step and returned — restore
+            // their saved selection so they see their current choice.
+            if PropertyPersistentFlags.shared.telemetryConsentDecisionMade == true {
+                let crashlytics = PropertyPersistentFlags.shared.diagnosticsSharingEnabled ?? true
+                let telemetry = PropertyPersistentFlags.shared.telemetryEnabled ?? false
+                diagnosticsSharingOption = DiagnosticsSharingOption(
+                    crashlyticsEnabled: crashlytics,
+                    telemetryEnabled: telemetry
+                )
+            } else {
+                diagnosticsSharingOption = .full
+            }
         }
 
         func updateDiagnosticsOption(to option: DiagnosticsSharingOption) {
             diagnosticsSharingOption = option
-            persistedDiagnosticsSharing = (option == .enabled)
+            PropertyPersistentFlags.shared.diagnosticsSharingEnabled = option.crashlyticsEnabled
+            PropertyPersistentFlags.shared.telemetryEnabled = option.telemetryEnabled
+            PropertyPersistentFlags.shared.telemetryConsentDecisionMade = true
         }
 
         // MARK: - Determine Initial Build State
 
-        /// Determines whether the app is in a fresh install state for Trio v0.3.0.
+        /// Determines whether the app is in a fresh install state for Trio (new vs. returning/updating user).
         ///
         /// This check is based on the assumption that a truly clean install will only contain
         /// the `logs/` directory and the `preferences.json` file in the app's Documents directory.
@@ -120,6 +131,8 @@ extension Onboarding {
                         defaultOption = .omnipodDash
                     } else if pumpManager is OmnipodPumpManager {
                         defaultOption = .omnipodEros
+                    } else if pumpManager is MedtrumPumpManager {
+                        defaultOption = .medtrum
                     } else if pumpManager is DanaKitPumpManager {
                         defaultOption = .dana
                     } else if pumpManager is MinimedPumpManager {
@@ -164,6 +177,8 @@ extension Onboarding {
             case .omnipodDash:
                 return PickerSetting(value: 0.1, step: 0.05, min: 0, max: 30, type: .insulinUnitPerHour)
             case .omnipodEros:
+                return PickerSetting(value: 0.1, step: 0.05, min: 0.05, max: 30, type: .insulinUnitPerHour)
+            case .medtrum:
                 return PickerSetting(value: 0.1, step: 0.05, min: 0.05, max: 30, type: .insulinUnitPerHour)
             case .none:
                 // same as dash, as that is the fallback
@@ -690,11 +705,16 @@ extension Onboarding {
             saveISFValues()
         }
 
-        /// Persists the current diagnostics sharing option to UserDefaults as a boolean.
+        /// Persists the current diagnostics sharing option and applies it to Crashlytics + telemetry.
         func applyDiagnostics() {
-            let booleanValue = diagnosticsSharingOption == .enabled
-            PropertyPersistentFlags.shared.diagnosticsSharingEnabled = booleanValue
-            Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(booleanValue)
+            PropertyPersistentFlags.shared.diagnosticsSharingEnabled = diagnosticsSharingOption.crashlyticsEnabled
+            PropertyPersistentFlags.shared.telemetryEnabled = diagnosticsSharingOption.telemetryEnabled
+            PropertyPersistentFlags.shared.telemetryConsentDecisionMade = true
+            Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(diagnosticsSharingOption.crashlyticsEnabled)
+            if diagnosticsSharingOption.telemetryEnabled {
+                TelemetryClient.shared.scheduleRecurring()
+                Task.detached { await TelemetryClient.shared.maybeSend() }
+            }
         }
 
         /// Applies the selected glucose units to the app's settings.
@@ -717,7 +737,6 @@ extension Onboarding {
                     .clamp(to: providedSettings.carbsRequiredThreshold)
                 settingsCopy.individualAdjustmentFactor = settingsCopy.individualAdjustmentFactor
                     .clamp(to: providedSettings.individualAdjustmentFactor)
-                settingsCopy.timeCap = settingsCopy.timeCap.clamp(to: providedSettings.timeCap)
                 settingsCopy.minuteInterval = settingsCopy.minuteInterval.clamp(to: providedSettings.minuteInterval)
                 settingsCopy.delay = settingsCopy.delay.clamp(to: providedSettings.delay)
                 settingsCopy.high = settingsCopy.high.clamp(to: providedSettings.high)
