@@ -11771,6 +11771,9 @@
         }
       }
     },
+    "• All Omnipod Types" : {
+
+    },
     "• An ISF of %@ %@/U means 1 U lowers your glucose by %@ %@" : {
       "localizations" : {
         "bg" : {
@@ -37332,6 +37335,9 @@
         }
       }
     },
+    "All glucose, insulin, and carb data. All therapy settings (basal, ISF, carb ratio, glucose targets). Your Nightscout URL and API token. Your Tidepool credentials. Remote-command secrets and APNS keys. Time zone. Location data. Logs are never sent automatically; sharing them remains a user-initiated flow." : {
+
+    },
     "All insulin will be suspended if your glucose is predicted to drop below the safety threshold.\n\nMust be set between 60-120 mg/dL.\nTo convert from mmol/L, multiply by 18.\n\nNote: Basal may be resumed if there's negative IOB and glucose is rising faster than predicted." : {
       "comment" : "Minimum Safety Threshold",
       "extractionState" : "manual",
@@ -37463,6 +37469,9 @@
           }
         }
       }
+    },
+    "All Omnipod Types" : {
+
     },
     "All Past Days of Data " : {
       "comment" : "Duration displayed in statPanel",
@@ -45510,6 +45519,12 @@
         }
       }
     },
+    "Anonymous usage statistics include the app version and build, device and iOS version, which pump and CGM you have paired, and whether Nightscout, Tidepool, and Apple Health are configured (yes/no — no URLs or credentials). They are sent to a self-hosted Trio telemetry endpoint." : {
+
+    },
+    "Anonymous usage statistics include the app version, your device and iOS version, your paired pump and CGM, and whether Nightscout, Tidepool, and Apple Health are configured (yes/no). No URLs, tokens, or credentials are included." : {
+
+    },
     "API secret" : {
       "comment" : "API secret in NS",
       "localizations" : {
@@ -45635,7 +45650,11 @@
         }
       }
     },
+    "App diagnostic insights — based on crash reports only — help us enhance app stability, ensure safety for all users, and quickly identify and resolve critical issues." : {
+
+    },
     "App diagnostic insights help us enhance app stability, ensure safety for all users, and enable us to quickly identify and resolve critical issues." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -46379,6 +46398,9 @@
           }
         }
       }
+    },
+    "App version, build date, branch, and commit SHA; whether this is a TestFlight build; an Apple-supplied per-vendor identifier (IDFV) and a per-install UUID; hardware identifier (e.g. iPhone15,2); platform and iOS version; the paired pump model (when a pump is configured); the paired CGM type and model (when a CGM is configured); whether Nightscout, Tidepool, and Apple Health are configured (yes/no — no URLs, tokens, or credentials); and a few preference flags (units, closed-loop on/off, Live Activity, calendar integration). A rolling cold-launch count is included. The full JSON is visible under App Diagnostics → What's sent." : {
+
     },
     "Appearance" : {
       "localizations" : {
@@ -56430,6 +56452,9 @@
         }
       }
     },
+    "Below is the exact JSON object Trio would send right now. No glucose, insulin, carbs, credentials, or settings values are included." : {
+
+    },
     "Beta (TestFlight) Expires" : {
       "localizations" : {
         "bg" : {
@@ -65912,6 +65937,9 @@
         }
       }
     },
+    "Carbs on Board (COB)" : {
+      "comment" : "Live Activity widget icon label for Carbs on Board (COB)"
+    },
     "Carbs On Board (COB)" : {
       "localizations" : {
         "bg" : {
@@ -68160,6 +68188,9 @@
           }
         }
       }
+    },
+    "CGM noise level too high: %lld." : {
+
     },
     "CGM: " : {
       "localizations" : {
@@ -78735,6 +78766,9 @@
         }
       }
     },
+    "Copy JSON" : {
+
+    },
     "Copy Secret" : {
       "localizations" : {
         "bg" : {
@@ -78979,6 +79013,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "無法存取檔案目錄"
+          }
+        }
+      }
+    },
+    "Could not calculate eventual glucose. Sensitivity: %@, Deviation: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not calculate eventual glucose. Sensitivity: %1$@, Deviation: %2$@"
           }
         }
       }
@@ -79231,6 +79275,15 @@
           }
         }
       }
+    },
+    "Crash reports include the app's state on crash, device, iOS and general system info, and a stack trace. They are sent to a Google Firebase Crashlytics project maintained by the Trio team." : {
+
+    },
+    "Crash reports include the app's state on crash, device, iOS info, and a stack trace. They are sent to Google Firebase Crashlytics, maintained by the Trio team." : {
+
+    },
+    "Crash Reports Only" : {
+
     },
     "Create Events in Calendar" : {
       "extractionState" : "manual",
@@ -95472,6 +95525,7 @@
       }
     },
     "Diagnostics are sent to a Google Firebase Crashlytics project, which is securely maintained and accessed only by the Trio team." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -100673,6 +100727,9 @@
         }
       }
     },
+    "Do not share any diagnostic data." : {
+
+    },
     "Don’t Allow" : {
       "localizations" : {
         "bg" : {
@@ -105838,6 +105895,9 @@
         }
       }
     },
+    "Enable Full Sharing" : {
+
+    },
     "Enable High Contrast Mode for better visibility in certain conditions." : {
       "localizations" : {
         "bg" : {
@@ -106838,6 +106898,7 @@
       }
     },
     "Enable Sharing" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -112231,6 +112292,9 @@
         }
       }
     },
+    "Endpoint" : {
+
+    },
     "Enter Meal Preset Name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -113741,6 +113805,12 @@
           }
         }
       }
+    },
+    "Error: could not determine target_bg. " : {
+
+    },
+    "Error: could not get current basal rate" : {
+
     },
     "Error! Bolus cancellation failed with error: %@" : {
       "comment" : "Error message for canceling a bolus",
@@ -115916,6 +115986,9 @@
           }
         }
       }
+    },
+    "EXPERIMENTAL FEATURE! Enables new, fully Swift-based algorithm version." : {
+      "comment" : "Use Swift Oref mini hint"
     },
     "Expiration Reminder" : {
       "extractionState" : "manual",
@@ -125650,6 +125723,9 @@
         }
       }
     },
+    "Frequency" : {
+
+    },
     "From" : {
       "localizations" : {
         "bg" : {
@@ -127903,6 +127979,9 @@
         }
       }
     },
+    "Glucose and Trend, no Delta" : {
+      "comment" : "Live Activity widget icon label for Glucose and Trend, no Delta"
+    },
     "Glucose Calculation" : {
       "localizations" : {
         "bg" : {
@@ -129653,6 +129732,9 @@
           }
         }
       }
+    },
+    "Glucose out of range: %@." : {
+
     },
     "Glucose Reading" : {
       "localizations" : {
@@ -131419,6 +131501,9 @@
           }
         }
       }
+    },
+    "Glucose, Trend, Delta" : {
+      "comment" : "Live Activity widget icon label for Glucose, Trend, Delta"
     },
     "Glucose: %@" : {
       "comment" : "Glucose: %@",
@@ -133708,6 +133793,12 @@
           }
         }
       }
+    },
+    "Help us improve Trio" : {
+
+    },
+    "Help us improve Trio. Pick how much you'd like to share — or opt out entirely." : {
+
     },
     "Here is an overview of what to expect:" : {
       "localizations" : {
@@ -141251,6 +141342,7 @@
       }
     },
     "If you prefer not to share this anonymized data, you can opt-out of data sharing." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -143649,6 +143741,9 @@
         }
       }
     },
+    "Improved Diagnostics" : {
+
+    },
     "In case you're using both profiles and temp targets" : {
       "comment" : "UI/UX option",
       "extractionState" : "manual",
@@ -145920,6 +146015,9 @@
           }
         }
       }
+    },
+    "Insulin on Board (IOB)" : {
+      "comment" : "Live Activity widget icon label for Insulin on Board (IOB)"
     },
     "Insulin On Board (IOB)" : {
       "localizations" : {
@@ -151725,6 +151823,9 @@
         }
       }
     },
+    "Last Updated" : {
+      "comment" : "Live Activity widget icon label for Last Updated"
+    },
     "Latest dev: %@" : {
       "localizations" : {
         "bg" : {
@@ -154001,6 +154102,9 @@
           }
         }
       }
+    },
+    "Limit with Safety Checks" : {
+
     },
     "Limited by Max IOB." : {
       "localizations" : {
@@ -164295,6 +164399,7 @@
       }
     },
     "Max bolus" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -174499,6 +174604,9 @@
         }
       }
     },
+    "Missing required inputs; cannot determine basal." : {
+
+    },
     "mmol/L" : {
       "comment" : "The short unit display string for millimoles of glucose per liter",
       "localizations" : {
@@ -176149,6 +176257,9 @@
           }
         }
       }
+    },
+    "NEW" : {
+
     },
     "New Basal Profile =\n(Current Basal Profile) × (Autosens Ratio)" : {
       "localizations" : {
@@ -179036,6 +179147,9 @@
         }
       }
     },
+    "No glucose delta (flat readings); cannot determine trend." : {
+
+    },
     "No Glucose Notifications will be triggered." : {
       "localizations" : {
         "bg" : {
@@ -179407,6 +179521,12 @@
           }
         }
       }
+    },
+    "No glucose status; cannot determine basal." : {
+
+    },
+    "No IOB data available; cannot determine basal." : {
+
     },
     "No Libre Transmitter Selected" : {
       "comment" : "No Libre Transmitter Selected",
@@ -180166,6 +180286,9 @@
           }
         }
       }
+    },
+    "No profile; cannot determine basal." : {
+
     },
     "No recent oref algorithm determination." : {
       "localizations" : {
@@ -183348,6 +183471,7 @@
       }
     },
     "Note to Medtronic Pump Users: You must also manually set the max basal rate on the pump to this value or higher." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -188232,6 +188356,7 @@
       }
     },
     "Omnipod DASH" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -188356,6 +188481,7 @@
       }
     },
     "Omnipod Eros" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -188604,6 +188730,9 @@
         }
       }
     },
+    "Once a day (or after a new build is installed), Trio sends a small JSON object to a self-hosted endpoint maintained by the Trio team. No third-party analytics service is involved." : {
+
+    },
     "Once enabled, the available customizations will appear. You can customize with the calendar of your choosing, use of emoji labels, and the inclusion of IOB & COB data." : {
       "localizations" : {
         "bg" : {
@@ -188727,6 +188856,9 @@
           }
         }
       }
+    },
+    "Once every 24 hours while the app is running, plus once after installing a new build." : {
+
     },
     "Once the total insulin required is calculated, this safety limit specifies what percentage of the insulin required can be delivered as an SMB." : {
       "localizations" : {
@@ -190874,6 +191006,9 @@
           }
         }
       }
+    },
+    "Opt out" : {
+
     },
     "Oref Algorithm" : {
       "localizations" : {
@@ -199861,6 +199996,12 @@
           }
         }
       }
+    },
+    "Privacy" : {
+
+    },
+    "Privacy details" : {
+
     },
     "Privacy Policy" : {
       "localizations" : {
@@ -215840,6 +215981,9 @@
         }
       }
     },
+    "See exactly what's sent" : {
+
+    },
     "Select \"Start Override\" to immediately start using the Override, or select \"Save as Preset\" to be able to easily start the Override at a later time." : {
       "localizations" : {
         "bg" : {
@@ -223066,6 +223210,9 @@
         }
       }
     },
+    "Share anonymous crash reports + usage data." : {
+
+    },
     "Share logs" : {
       "comment" : "2 log files to share",
       "extractionState" : "manual",
@@ -223321,6 +223468,9 @@
           }
         }
       }
+    },
+    "Share only crash reports — no usage data." : {
+
     },
     "Shared Secret" : {
       "localizations" : {
@@ -252156,6 +252306,9 @@
         }
       }
     },
+    "This feature is EXPERIMENTAL and not yet cleared for general use." : {
+
+    },
     "This feature resets the Autosens Ratio to neutral when you rewind your pump on the assumption that this corresponds to a site change." : {
       "localizations" : {
         "bg" : {
@@ -262824,6 +262977,7 @@
       }
     },
     "Total Daily Dose" : {
+      "comment" : "Live Activity widget icon label for Total Daily Dose",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -265349,6 +265503,7 @@
       }
     },
     "Trio collects the app's state on crash, device, iOS and general system info, and a stack trace." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -266217,6 +266372,7 @@
       }
     },
     "Trio does not collect any health related data, e.g. glucose readings, insulin rates or doses, meal data, setting values, or similar." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -266339,6 +266495,9 @@
           }
         }
       }
+    },
+    "Trio does not collect any health related data, e.g. glucose readings, insulin rates or doses, meal data, therapy setting values, or similar." : {
+
     },
     "Trio does not have enough closed-loop data to enable Dynamic ISF. This data collection can take up to 7 days." : {
       "localizations" : {
@@ -266465,6 +266624,7 @@
       }
     },
     "Trio does not track any usage metrics or any other personal data about users other than the used iPhone model and iOS version." : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -268199,6 +268359,9 @@
           }
         }
       }
+    },
+    "Trio never collects glucose readings, insulin rates or doses, meal data, therapy setting values, or any other health information." : {
+
     },
     "Trio Not Active" : {
       "comment" : "Trio Not Active",
@@ -272316,6 +272479,9 @@
         }
       }
     },
+    "Unable to render payload." : {
+
+    },
     "Unable to Save" : {
       "localizations" : {
         "bg" : {
@@ -273338,6 +273504,9 @@
         }
       }
     },
+    "Unknown determination error." : {
+
+    },
     "Unknown Error" : {
       "localizations" : {
         "bg" : {
@@ -273710,6 +273879,9 @@
           }
         }
       }
+    },
+    "Until now, Trio could only sent crash reports. You can now also share anonymous usage statistics — things like your iPhone and iOS version, and which pump and CGM you have paired. This helps the Trio team prioritize what to fix and improve next." : {
+
     },
     "Update Available" : {
       "comment" : "Title for update available alert",
@@ -275970,6 +276142,9 @@
         }
       }
     },
+    "Use \"What's sent\" above to inspect the exact JSON payload before deciding." : {
+
+    },
     "Use a sigmoid function for ISF (and for CR, when enabled), instead of the default Logarithmic formula. Requires the Dynamic ISF setting to be enabled in settings\n\nThe Adjustment setting adjusts the slope of the curve (Y: Dynamic ratio, X: Blood Glucose). A lower value ==> less steep == less aggressive.\n\nThe autosens.min/max settings determines both the max/min limits for the dynamic ratio AND how much the dynamic ratio is adjusted. If AF is the slope of the curve, the autosens.min/max is the height of the graph, the Y-interval, where Y: dynamic ratio. The curve will always have a sigmoid shape, no matter which autosens.min/max settings are used, meaning these settings have big consequences for the outcome of the computed dynamic ISF. Please be careful setting a too high autosens.max value. With a proper profile ISF setting, you will probably never need it to be higher than 1.5\n\nAn Autosens.max limit > 1.5 is not advisable when using the sigmoid function." : {
       "comment" : "Use Sigmoid Function",
       "extractionState" : "manual",
@@ -277124,6 +277299,12 @@
           }
         }
       }
+    },
+    "Use Swift Oref" : {
+      "comment" : "Use Swift Oref"
+    },
+    "Use the diagnostics-sharing chooser above. Pick \"Crash Reports Only\" to keep crash reporting but disable telemetry, or \"Disable Sharing\" to turn off both. Changes take effect immediately." : {
+
     },
     "Use your Tidepool credentials to log in. If you don't have a Tidepool account, you can sign up on the login page.\n\nWhen connected, Trio uploads your glucose, carb entries, insulin (bolus and basal), pump settings, and therapy settings to Tidepool.\n\nTherapy settings include basal schedules, carb ratios, insulin sensitivities, and glucose targets." : {
       "localizations" : {
@@ -282514,6 +282695,9 @@
         }
       }
     },
+    "We're building a faster and more maintainable Swift version of the algorithm (Oref) that runs in Trio. It's faster, more accurate and improves Trio for everyone." : {
+
+    },
     "Week" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -283273,6 +283457,9 @@
         }
       }
     },
+    "What is sent" : {
+
+    },
     "What it Adjusts" : {
       "localizations" : {
         "bg" : {
@@ -283396,6 +283583,9 @@
           }
         }
       }
+    },
+    "What stays on your device" : {
+
     },
     "What This Means" : {
       "localizations" : {
@@ -283644,6 +283834,9 @@
           }
         }
       }
+    },
+    "What's sent" : {
+
     },
     "When \"Reduced Bolus\" is selected in the bolus calculator, the recommended bolus will be multiplied by the \"Reduced Bolus Percentage\" as well as the \"Recommended Bolus Percentage\"." : {
       "localizations" : {
@@ -284636,6 +284829,9 @@
           }
         }
       }
+    },
+    "When enabled, Trio will no longer use the old JavaScript-based algorithm that runs virtualized on your phone. Instead, it will use a fully Swift-based algorithm." : {
+
     },
     "When Remote Control is enabled, you can send boluses, overrides, temporary targets, carbs, and other commands to Trio via push notifications." : {
       "localizations" : {
@@ -288788,6 +288984,9 @@
         }
       }
     },
+    "You can disable this feature anytime." : {
+
+    },
     "You can influence the adjustments made by Dynamic ISF primarily by adjusting Autosens Max, Autosens Min, and Adjustment Factor. Other settings also influence Dynamic ISF's response, such as Glucose Target, Profile ISF, Peak Insulin Time, and Weighted Average of TDD." : {
       "localizations" : {
         "bg" : {
@@ -290283,6 +290482,9 @@
           }
         }
       }
+    },
+    "Your glucose data, therapy settings, credentials, and logs always stay on your device. Pick what you'd like to share — you can change this any time in Settings → App Diagnostics." : {
+
     },
     "Your glucose target is the blood glucose level you aim to maintain. Trio will use this to calculate insulin doses and provide recommendations." : {
       "localizations" : {
