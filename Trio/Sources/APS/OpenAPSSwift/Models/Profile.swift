@@ -1,6 +1,6 @@
 import Foundation
 
-struct Profile: Codable {
+struct Profile: JSON {
     // Kotlin-defined properties from AndroidAPS OapsProfile.kt
     // with defaults pulled from profile.js
     var dia: Decimal?
@@ -64,11 +64,12 @@ struct Profile: Codable {
     var weightPercentage: Decimal = 0.65
     var tddAdjBasal: Bool = false
     var thresholdSetting: Decimal = 60
-    var model: String?
     var basalprofile: [BasalProfileEntry]?
     var isfProfile: ComputedInsulinSensitivities?
     var bgTargets: ComputedBGTargets?
     var carbRatios: CarbRatios?
+    // rates the paired pump can deliver; injected per determination, never persisted; empty means no paired pump
+    var supportedBasalRates: [Decimal] = []
 
     private enum CodingKeys: String, CodingKey {
         case dia
@@ -129,7 +130,6 @@ struct Profile: Codable {
         case weightPercentage
         case tddAdjBasal
         case thresholdSetting = "threshold_setting"
-        case model
         case basalprofile
         case isfProfile
         case bgTargets = "bg_targets"

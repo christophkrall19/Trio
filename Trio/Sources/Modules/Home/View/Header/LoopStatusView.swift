@@ -38,7 +38,7 @@ struct LoopStatusView: View {
                             isHelpSheetPresented.toggle()
                         },
                         label: {
-                            Image(systemName: "questionmark.circle")
+                            Image(systemName: "questionmark.circle").accessibilityLabel(Text("More information"))
                         }
                     )
                 }.padding(.top, 20)
@@ -286,11 +286,6 @@ struct LoopStatusView: View {
 
         if state.isSmoothingEnabled {
             tags.append("Smoothing: On")
-        }
-
-        // FIXME: remove this before feat/dev-oref-swift is merged to dev
-        if state.settingsManager.settings.useSwiftOref {
-            tags.append("Swift Oref")
         }
 
         if let currentTDD = state.fetchedTDDs.first?.totalDailyDose, currentTDD != 0 {
